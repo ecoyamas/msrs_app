@@ -1,5 +1,5 @@
 MsrsApp::Application.routes.draw do
-  get "home/top"
+  match '/',    to: 'home#top',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
