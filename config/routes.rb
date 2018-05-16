@@ -1,5 +1,7 @@
 MsrsApp::Application.routes.draw do
-  devise_for :users
+  devise_for :users,:controllers => {
+    :registrations => "registrations"
+  }
   resources :users, only: [:show]
   root  'home#top'
   # The priority is based upon order of creation: first created -> highest priority.
