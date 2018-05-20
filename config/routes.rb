@@ -1,6 +1,6 @@
 MsrsApp::Application.routes.draw do
   devise_for :users,:controllers => {
-    :registrations => "registrations"
+    :registrations => "registrations",:sessions => "sessions"
   }
   resources :users, only: [:show]
   root  'home#top'
