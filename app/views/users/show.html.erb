@@ -1,4 +1,21 @@
 <% provide(:title, 'my page') %>
+<h1 id="my-page">my page</h1>
 
-<%= @user.name %>
-<%= @user.email %>
+<div id="user-name">
+<h2 id="account">user name</h2>
+<div><%= @user.name%></div>
+</div>
+
+<div id="information">
+  <h3>information</h3>
+  <%= render 'layouts/information' %>
+</div>
+
+<div id="reservation-status">
+  <h2 id="reservation-title">reservation status</h2>
+  <p>予約状況を表示予定</p>
+</div>
+
+<p>
+  <a href="#" class="btn btn-primary btn-lg" role="button" id=new-reserve>new reserve</a>
+</p>
