@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place: MyString
+  studio: MyString
+  start_date: 2018-05-22 22:41:40
+  end_date: 2018-05-22 22:41:40
+  user_id: 1
+
+two:
+  place: MyString
+  studio: MyString
+  start_date: 2018-05-22 22:41:40
+  end_date: 2018-05-22 22:41:40
+  user_id: 1
