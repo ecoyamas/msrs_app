@@ -1,0 +1,15 @@
+<% provide(:title, '予約ページ') %>
+<p>予約フォーム</p>
+
+<%= form_for @reservation do |f| %>
+<%= f.hidden_field :user_id, value:current_user.id %>
+  <div class="field">
+    <%= f.label :place, "店舗名" %>
+    <%= f.text_field :place %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録する" %>
+  </div>
+
+<% end %>
