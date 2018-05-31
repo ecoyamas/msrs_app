@@ -4,5 +4,4 @@ class SessionsController < Devise::SessionsController
         user_path(resource)
       end
 
-
 end

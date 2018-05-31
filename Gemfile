@@ -7,6 +7,7 @@ gem 'sprockets', '2.11.0'
 gem 'devise', '3.4.1'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails', '>= 2.9.0'
+gem 'faker', '1.1.2'
 
 group :development do
   gem 'sqlite3', '1.3.9'
