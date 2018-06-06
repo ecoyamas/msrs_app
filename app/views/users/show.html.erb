@@ -1,4 +1,9 @@
 <% provide(:title, 'my page') %>
+
+<% flash.each do |key, value| %>
+        <div class="alert <%= bootstrap_class_for(key) %>"><%= value %></div>
+      <% end %>
+
 <h1 id="my-page">my page</h1>
 
 <div id="user-name">
@@ -14,7 +19,9 @@
 <div id="reservation-status">
   <h2 id="reservation-title">reservation status</h2>
   <p>予約状況を表示予定</p>
-  <%= @reservation.place %>
+  <% @reservation.each do |r| %>
+  <%= r.place %>
+  <% end %>
 </div>
 
 <p>
