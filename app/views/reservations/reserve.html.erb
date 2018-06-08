@@ -1,25 +1,37 @@
 <% provide(:title, '予約ページ') %>
-<p>予約フォーム</p>
+  <h1 id="my-page">Reservation Form</h1>
 
-<%= form_for @reservation do |f| %>
-<%= f.hidden_field :user_id, value:current_user.id %>
+  <%= form_for @reservation do |f| %>
+  <%= f.hidden_field :user_id, value:current_user.id %>
+  <div id="background">
+    <div id="reservation-form">
+      <div id="store-form">
+        <%= f.label :"店舗名" %><br>
+        <%= f.select :place, [["渋谷店", "渋谷店"], ["新宿店", "新宿店"], ["代々木店", "代々木店"],
+                                         ["高田馬場店", "高田馬場店"], ["池袋店", "池袋店"], ["大塚店", "大塚店"]] ,
+                                         {prompt: "店舗を選択"}, {class: "form-control"} %><br>
+      </div>
 
-<%= f.label :"店舗名" %><br>
-  <%= f.select :place, [["渋谷店", "渋谷店"], ["新宿店", "新宿店"], ["代々木店", "代々木店"], ["高田馬場店", "高田馬場店"],
-  ["池袋店", "池袋店"], ["大塚店", "大塚店"]] ,class:"form-control" %><br>
+      <div id="studio-form">
+        <%= f.label :"スタジオ" %><br>
+        <%= f.select :studio, [["Astudio", "Astudio"], ["Bstudio", "Bstudio"], ["Cstudio", "Cstudio"],
+                                          ["Dstudio", "Dstudio"], ["Estudio", "Estudio"], ["Fstudio", "Fstudio"]] ,
+                                          {prompt: "スタジオを選択"}, {class: "form-control"} %><br>
+      </div>
 
-  <%= f.label :"スタジオ" %><br>
-    <%= f.select :studio, [["Astudio", "Astudio"], ["Bstudio", "Bstudio"], ["Cstudio", "Cstudio"], ["Dstudio", "Dstudio"],
-    ["Estudio", "Estudio"], ["Fstudio", "Fstudio"]] ,class:"form-control" %><br>
+      <div id="start-time">
+        <%= f.label :"開始時間" %><br>
+        <%= f.datetime_select :start_date , :start_year => Time.now.year, :end_year => Time.now.year + 1, :minute_step => 30,class:"form-control"%><br>
+      </div>
 
-<%= f.label :"開始時間" %><br>
-<%= f.datetime_select :start_date , :start_year => Time.now.year, :end_year => Time.now.year + 1,
-         :minute_step => 30,class:"form-control"%><br>
+      <div id="end-time">
+        <%= f.label :"終了時間" %><br>
+        <%= f.datetime_select :end_date , :start_year => Time.now.year, :end_year => Time.now.year + 1, :minute_step => 30,class:"form-control"%><br>
+      </div>
 
-<%= f.label :"終了時間" %><br>
-<%= f.datetime_select :end_date , :start_year => Time.now.year, :end_year => Time.now.year + 1,
-        :minute_step => 30,class:"form-control"%><br>
-
-<%= f.submit "予約する", class:"btn btn-sm btn-primary"%>
-
+      <div id="Rbutton">
+        <%= f.submit "reserve", id:"reserve-button"%>
+      </div>
+    </div>
+  </div>
 <% end %>

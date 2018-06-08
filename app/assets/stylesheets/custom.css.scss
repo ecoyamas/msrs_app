@@ -3,6 +3,10 @@
 /* header */
 #header-size {
   margin-bottom: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 /* footer */
@@ -105,7 +109,7 @@ footer ul li {
   background-color: #a1d8e2;
   font-size: 300%;
   text-shadow:2px 2px 2px #f8f8ff;
-  margin-top: 0px;
+  margin-top: 50px;
   margin-bottom: 0px;
   height: 150px;
 }
@@ -155,7 +159,7 @@ footer ul li {
   padding-top: 10px;
 }
 
-#reserve-button {
+#newreserve-button {
   clear: both;
   margin-top: 20px;
   margin-left: 20px;
@@ -180,6 +184,71 @@ footer ul li {
 
 /*予約フォーム*/
 
-#start_date_area {
-  width: 50%;
+#reservation-form {
+margin: 0 auto;
+padding-top: 20px;
+width: 60%;
+height:550px;
+background-color:rgba(192,237,232,0.5);
+border-radius: 20px 20px 20px 20px;
+}
+
+#store-form {
+  padding:15px 20px;
+  margin: 0 auto;
+  width: 35%;
+  background-color: #fff3b8;
+  border-radius: 20px 20px 20px 20px;
+}
+
+#studio-form {
+  padding:15px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 35%;
+  background-color: #fff3b8;
+  border-radius: 20px 20px 20px 20px;
+}
+
+#start-time {
+  padding:15px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 40%;
+  background-color: #fff3b8;
+  border-radius: 20px 20px 20px 20px;
+}
+
+#end-time {
+  padding:15px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 40%;
+  background-color: #fff3b8;
+  border-radius: 20px 20px 20px 20px;
+}
+
+#Rbutton {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#reserve-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.7em 0.7em;
+  text-decoration: none;
+  color: #302833;
+  background: #f3bf88;/*背景色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
+  border-color: #f3bf88;
+}
+
+#background {
+  background: url(/images/guitars-2033566__480.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
