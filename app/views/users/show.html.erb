@@ -18,10 +18,28 @@
 
 <div id="reservation-status">
   <h2 id="reservation-title">reservation status</h2>
-  <p>予約状況を表示予定</p>
-  <% @reservation.each do |r| %>
-  <%= r.place %>
-  <% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Studio</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservation.each do |r| %>
+    <tr>
+      <td><%= r.place %></td>
+      <td><%= r.studio %></td>
+      <td><%= r.start_date %></td>
+      <td><%= r.end_date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
 
 <p>
