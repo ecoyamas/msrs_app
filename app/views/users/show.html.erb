@@ -36,6 +36,9 @@
             <td><%= r.studio %></td>
             <td><%= r.start_date %></td>
             <td><%= r.end_date %></td>
+            <td><%= link_to "変更", "/reservations/#{r.id}/edit",class:"btn btn-success" %> </td>
+            <td><%= link_to "削除", "/reservations/#{r.id}", method: "delete" ,
+                    data: { confirm: "予約を削除しますか?"},class:"btn btn-info" %> </td>
           </tr>
         <% end %>
       </tbody>

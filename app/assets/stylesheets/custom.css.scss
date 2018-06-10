@@ -44,6 +44,7 @@ footer ul li {
   text-align: center;
   background-color: #a1d8e2;
   font-size: 120%;
+  padding-top: 100px;
 }
 
 #MS {
@@ -79,6 +80,7 @@ footer ul li {
 
 #sign-up {
   text-align: center;
+  padding-top: 50px;
 }
 
 #error_explanation {
@@ -99,6 +101,7 @@ footer ul li {
 
 #sign-in {
   text-align: center;
+  padding-top: 50px;
 }
 
 /* my page */
@@ -125,6 +128,7 @@ footer ul li {
   text-align: center;
   float: left;
   font-family: sans-serif;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 }
 
 #account {
@@ -141,6 +145,7 @@ footer ul li {
   margin-right: 20px;
   border-radius: 20px 20px 20px 20px;
   text-align: center;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 }
 
 #reservation-status {
@@ -150,6 +155,8 @@ footer ul li {
   margin-top: 160px;
   margin-left: 20px;
   border-radius: 20px 20px 20px 20px;
+  overflow: auto;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
 }
 
 #reservation-title {

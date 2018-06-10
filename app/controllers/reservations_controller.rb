@@ -14,6 +14,19 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+  @reservation = Reservation.find(params[:id])
+  @reservation.destroy
+  redirect_to current_user
+  end
+
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.update_attributes(reservation_params)
+    redirect_to current_user
   end
 end
 
