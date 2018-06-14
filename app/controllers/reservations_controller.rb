@@ -5,6 +5,15 @@ class ReservationsController < ApplicationController
   def reserve
     @user = User.find(params[:id])
     @reservation = Reservation.new
+    @shibuyaA = Reservation.where(place:"渋谷店").where(studio:"Astudio")
+    @shibuyaB = Reservation.where(place:"渋谷店").where(studio:"Bstudio")
+    @shibuyaC = Reservation.where(place:"渋谷店").where(studio:"Cstudio")
+    @shibuyaD = Reservation.where(place:"渋谷店").where(studio:"Cstudio")
+    @yoyogi = Reservation.where(place:"代々木店")
+    @shinjuku = Reservation.where(place:"新宿店")
+    @takadanobaba = Reservation.where(place:"高田馬場店")
+    @ikebukuro = Reservation.where(place:"池袋店")
+    @otsuka = Reservation.where(place:"大塚店")
   end
 
   def create
