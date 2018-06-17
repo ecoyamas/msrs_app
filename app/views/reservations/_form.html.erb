@@ -23,8 +23,7 @@
 
 　　　<div id="end-time" >
       <%= f.label :"時間" %><br>
-      <%= f.select :frame, [["10:00~11:00", "10:00~11:00"], ["11:00~12:00", "11:00~12:00"]] ,
-                                       {prompt: "時間を選択"}, {class: "form-control"} %><br>
+      <%= f.select :frame, @frame, {prompt: "時間を選択"}, {class: "form-control"} %><br>
      </div>
 
 

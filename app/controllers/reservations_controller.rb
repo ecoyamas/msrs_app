@@ -14,6 +14,7 @@ class ReservationsController < ApplicationController
     @takadanobaba = Reservation.where(place:"高田馬場店")
     @ikebukuro = Reservation.where(place:"池袋店")
     @otsuka = Reservation.where(place:"大塚店")
+    @frame = Reservation.new.frame_list
   end
 
   def create
@@ -30,6 +31,7 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
+    @frame = Reservation.new.frame_list
   end
 
   def update
@@ -41,5 +43,5 @@ end
 
 private
  def reservation_params
-    params.require(:reservation).permit(:place, :studio, :start_date, :end_date,:user_id)
+    params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
  end

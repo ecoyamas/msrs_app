@@ -1,6 +1,7 @@
 <% provide(:title, '予約ページ') %>
 <h1 id="my-page">New Reservation</h1>
 
+<h3>予約空き状況</h3>
 <div class="tabs">
   <input id="shibuya" type="radio" name="tab_item" checked>
   <label class="tab_item" for="shibuya">渋谷店</label>
@@ -35,4 +36,4 @@
 </div>
 
 
-  <%= render "form" %>
+  <%= render "form" , object: @frame %>
