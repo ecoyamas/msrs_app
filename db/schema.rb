@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180616065307) do
+ActiveRecord::Schema.define(version: 20180617052310) do
 
   create_table "reservations", force: true do |t|
-    t.string   "place"
+    t.integer  "place",      limit: 255
     t.string   "studio"
     t.integer  "user_id"
     t.datetime "created_at"

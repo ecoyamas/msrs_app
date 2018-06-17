@@ -33,7 +33,7 @@
         <% @reservation.each do |r| %>
         <% if r.date >= Date.today %>
           <tr>
-            <td><%= r.place %></td>
+            <td><%= r.place_name %></td>
             <td><%= r.studio %></td>
             <td><%= r.date %></td>
             <td><%= r.frame_time %></td>

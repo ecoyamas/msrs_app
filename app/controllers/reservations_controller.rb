@@ -15,6 +15,7 @@ class ReservationsController < ApplicationController
     @ikebukuro = Reservation.where(place:"池袋店")
     @otsuka = Reservation.where(place:"大塚店")
     @frame = Reservation.new.frame_list
+    @place = Reservation.new.place_list
   end
 
   def create
@@ -32,6 +33,7 @@ class ReservationsController < ApplicationController
   def edit
     @reservation = Reservation.find(params[:id])
     @frame = Reservation.new.frame_list
+    @place = Reservation.new.place_list
   end
 
   def update

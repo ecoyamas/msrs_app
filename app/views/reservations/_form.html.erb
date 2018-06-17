@@ -4,9 +4,7 @@
     <div id="reservation-form">
       <div id="store-form">
         <%= f.label :"店舗名" %><br>
-        <%= f.select :place, [["渋谷店", "渋谷店"], ["新宿店", "新宿店"], ["代々木店", "代々木店"],
-                                         ["高田馬場店", "高田馬場店"], ["池袋店", "池袋店"], ["大塚店", "大塚店"]] ,
-                                         {prompt: "店舗を選択"}, {class: "form-control"} %><br>
+        <%= f.select :place, @place, {prompt: "店舗を選択"}, {class: "form-control"} %><br>
       </div>
 
       <div id="studio-form">
