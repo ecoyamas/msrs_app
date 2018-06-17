@@ -16,15 +16,17 @@
                                           {prompt: "スタジオを選択"}, {class: "form-control"} %><br>
       </div>
 
-      <div id="start-time">
-        <%= f.label :"開始時間" %><br>
-        <%= f.datetime_select :start_date , :start_year => Time.now.year, :end_year => Time.now.year + 1, :minute_step => 30,class:"form-control"%><br>
+      <div id="start-time" >
+        <%= f.label :"予約日" %><br>
+        <%= f.date_select :date,class: 'form-control' %>
       </div>
 
-      <div id="end-time">
-        <%= f.label :"終了時間" %><br>
-        <%= f.datetime_select :end_date , :start_year => Time.now.year, :end_year => Time.now.year + 1, :minute_step => 30,class:"form-control"%><br>
-      </div>
+　　　<div id="end-time" >
+      <%= f.label :"時間" %><br>
+      <%= f.select :frame, [["10:00~11:00", "10:00~11:00"], ["11:00~12:00", "11:00~12:00"]] ,
+                                       {prompt: "時間を選択"}, {class: "form-control"} %><br>
+     </div>
+
 
       <div id="Rbutton">
         <%= f.submit "reserve", id:"reserve-button"%>
