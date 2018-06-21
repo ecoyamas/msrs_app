@@ -1,37 +1,38 @@
 <% provide(:title, '予約ページ') %>
 <h1 id="my-page">New Reservation</h1>
 
-<h3>予約空き状況</h3>
-<div class="tabs">
-  <input id="shibuya" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="shibuya">渋谷店</label>
+<h3>本日の空き状況</h3>
 
-  <input id="yoyogi" type="radio" name="tab_item">
-  <label class="tab_item" for="yoyogi">代々木店</label>
 
-  <input id="shinjuku" type="radio" name="tab_item">
-  <label class="tab_item" for="shinjuku">新宿店</label>
+<ul class="nav nav-tabs">
+ <li><a href="#sampleContentA" data-toggle="tab">渋谷店</a></li>
+ <li class="active"><a href="#sampleContentB" data-toggle="tab">代々木店</a></li>
+ <li><a href="#sampleContentC" data-toggle="tab">新宿店</a></li>
+ <li><a href="#sampleContentD" data-toggle="tab">高田馬場店</a></li>
+ <li><a href="#sampleContentE" data-toggle="tab">池袋店</a></li>
+ <li><a href="#sampleContentF" data-toggle="tab">大塚店</a></li>
+</ul>
 
-  <input id="takadanobaba" type="radio" name="tab_item">
-  <label class="tab_item" for="takadanobaba">高田馬場店</label>
-
-  <input id="ikebukuro" type="radio" name="tab_item">
-  <label class="tab_item" for="ikebukuro">池袋店</label>
-
-  <input id="otsuka" type="radio" name="tab_item">
-  <label class="tab_item" for="otsuka">大塚店</label>
-
+<div class="tab-content">
+ <div class="tab-pane" id="sampleContentA">
   <%= render "shibuya" %>
-
+ </div>
+ <div class="tab-pane active" id="sampleContentB">
   <%= render "yoyogi" %>
-
+ </div>
+ <div class="tab-pane" id="sampleContentC">
   <%= render "shinjuku" %>
-
+ </div>
+ <div class="tab-pane" id="sampleContentD">
   <%= render "takadanobaba" %>
-
+ </div>
+ <div class="tab-pane" id="sampleContentE">
   <%= render "ikebukuro" %>
-
+ </div>
+ <div class="tab-pane" id="sampleContentF">
   <%= render "otsuka" %>
+ </div>
+</div>
 
 </div>
 

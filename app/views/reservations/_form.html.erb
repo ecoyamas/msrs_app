@@ -16,7 +16,8 @@
 
       <div id="start-time" >
         <%= f.label :"予約日" %><br>
-        <%= f.date_select :date,class: 'form-control' %>
+        <%= f.date_select :date, :start_year=>Time.now.year, :end_year=>Time.now.year,
+        class: 'form-control' %>
       </div>
 
 　　　<div id="end-time" >
