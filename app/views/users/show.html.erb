@@ -31,7 +31,7 @@
 
       <tbody>
         <% @reservation.each do |r| %>
-        <% if r.date >= Date.today %>
+        <% if r.date >= @today %>
           <tr>
             <td><%= r.place_name %></td>
             <td><%= r.studio %></td>
