@@ -31,7 +31,6 @@
 
       <tbody>
         <% @reservation.each do |r| %>
-        <% if r.date >= @today %>
           <tr>
             <td><%= r.place_name %></td>
             <td><%= r.studio %></td>
@@ -41,7 +40,6 @@
             <td><%= link_to "削除", "/reservations/#{r.id}", method: "delete" ,
                     data: { confirm: "予約を取り消しますか?"},class:"btn btn-info" %> </td>
           </tr>
-        <% end %>
         <% end %>
       </tbody>
     </table>
