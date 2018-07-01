@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
 
   def index
+    @store = Store.all
   end
 
   def new
@@ -14,6 +15,12 @@ class StoresController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+   @store = Store.find(params[:id])
+   @store.destroy
+   redirect_to stores_path
   end
 
   private
