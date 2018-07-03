@@ -2,7 +2,7 @@
 
 <h1 id="my-page">List of stores</h1>
 
-<table class="table table-striped" id=stores-table>
+<table class="table table-striped stores-table">
   <thead>
     <tr>
       <th>ID</th>
@@ -12,14 +12,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @store.each do |s| %>
+    <% @stores.each do |s| %>
     <tr>
       <td><%= s.id %></td>
       <td><%= s.store_name %></td>
-      <td><%= link_to "店舗詳細", "",class:"btn btn-success" %> </td>
-      <td><%= link_to "削除", "/stores/#{s.id}", method: "delete" ,
-              data: { confirm: "店舗を削除しますか?"},class:"btn btn-info" %> </td>
+      <td><%= link_to "店舗詳細", "", class: "btn btn-success" %></td>
+      <td><%= link_to "削除", store_path(s), method: "delete",
+              data:{confirm: "店舗を削除しますか?"}, class:"btn btn-info" %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<%= link_to "新規登録", new_store_path, class: "btn btn-primary new-store-button" %>
