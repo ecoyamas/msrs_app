@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  before_action :admin_user
 
   def index
     @stores = Store.all
@@ -27,6 +28,10 @@ class StoresController < ApplicationController
   private
    def stores_params
       params.require(:store).permit(:store_name)
+   end
+
+   def admin_user
+      redirect_to(root_url) unless current_user.admin?
    end
 
 end
