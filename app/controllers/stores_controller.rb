@@ -15,6 +15,7 @@ class StoresController < ApplicationController
   end
 
   def show
+    @store = Store.find(params[:id])
   end
 
   def destroy
