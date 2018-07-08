@@ -2,20 +2,19 @@
 
 <h1 id="my-page"><%= @store.store_name %></h1>
 
+<h2>スタジオ一覧</h2>
 <table class="table table-striped stores-table">
   <thead>
     <tr>
-      <th><%= @store.store_name %>スタジオ一覧</th>
-      <th></th>
+      <th>スタジオ名</th>
       <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-
+　　<%# TODO: 店舗にひも付くスタジオ一覧を表示 %>
     <tr>
-      <td>スタジオ表示予定</td>
-      <td></td>
+      <td>スタジオ名</td>
       <td><%= link_to "予約状況", "", class: "btn btn-success" %></td>
       <td><%= link_to "スタジオ削除", "", method: "delete",
               data:{confirm: "スタジオを削除しますか?"}, class:"btn btn-info" %></td>
