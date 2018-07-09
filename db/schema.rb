@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180708041550) do
+ActiveRecord::Schema.define(version: 20180708063744) do
 
   create_table "reservations", force: true do |t|
     t.integer  "place",      limit: 255
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180708041550) do
     t.string   "store_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "studios", force: true do |t|
