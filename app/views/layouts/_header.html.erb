@@ -1,6 +1,6 @@
 
 <!-- ヘッダーのパーシャル -->
-<nav class="navbar navbar-inverse" id="header-size" >
+<nav class="navbar navbar-inverse" id="header-size">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
@@ -13,29 +13,39 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
       <ul class="nav navbar-nav">
         <% if signed_in? %>
-              <li class="active">
-                <%= link_to "my page", current_user %>
-              </li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-              </li>
-              <li>
-                <%= link_to"Link","http://www.studiopenta.net/"%>
-              </li>
-          <% else %>
           <li class="active">
-            <%= link_to "Home","/",class:"navbar-brand" %>
+            <%= link_to "my page", current_user %>
+          </li>
+          <li>
+            <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+          </li>
+          <li>
+            <%= link_to"Link", "http://www.studiopenta.net/" %>
+          </li>
+
+        <% if current_user.admin? %>
+          <li>
+            <%= link_to "店舗登録", new_store_path %>
+          </li>
+          <li>
+            <%= link_to "店舗一覧", stores_path %>
+          </li>
+        <% end %>
+
+        <% else %>
+          <li class="active">
+            <%= link_to "Home", "/", class:"navbar-brand" %>
           </il>
           <li>
-            <%= link_to"Sign up","/users/sign_up"%>
+            <%= link_to"Sign up", new_user_registration_path %>
           </li>
           <li>
-            <%= link_to"Sign in","/users/sign_in"%>
+            <%= link_to"Sign in", new_user_session_path %>
           </li>
           <li>
-            <%= link_to"Link","http://www.studiopenta.net/"%>
+            <%= link_to"Link", "http://www.studiopenta.net/" %>
           </li>
-         <% end %>
+        <% end %>
       </ul>
     </div>
   </div>

@@ -5,7 +5,6 @@
 <table class="table table-striped stores-table">
   <thead>
     <tr>
-      <th>ID</th>
       <th>店舗名</th>
       <th></th>
       <th></th>
@@ -14,7 +13,6 @@
   <tbody>
     <% @stores.each do |s| %>
     <tr>
-      <td><%= s.id %></td>
       <td><%= s.store_name %></td>
       <td><%= link_to "店舗詳細", store_path(s), class: "btn btn-success" %></td>
       <td><%= link_to "削除", store_path(s), method: "delete",
