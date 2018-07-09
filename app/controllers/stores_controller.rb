@@ -10,7 +10,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.new(stores_params)
+    @store = current_user.stores.new(stores_params)
     @store.save
     redirect_to stores_path
   end
@@ -27,7 +27,7 @@ class StoresController < ApplicationController
 
   private
    def stores_params
-      params.require(:store).permit(:store_name,:user_id)
+      params.require(:store).permit(:store_name, :user_id)
    end
 
    def admin_user
