@@ -1,12 +1,13 @@
 class StudiosController < ApplicationController
   def new
     @studio = Studio.new
+    @store_id = params[:store_id]
   end
 
   def create
-    @studio = Store.new(studios_params)
+    @studio = Studio.new(studios_params)
     @studio.save
-    redirect_to store_path
+    redirect_to "/stores/#{@studio.store_id}"
   end
 
 end
