@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  before_action :admin_user
 
   def index
     @stores = Store.all
@@ -9,12 +10,13 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.new(stores_params)
+    @store = current_user.stores.new(stores_params)
     @store.save
     redirect_to stores_path
   end
 
   def show
+    @store = Store.find(params[:id])
   end
 
   def destroy
@@ -25,7 +27,11 @@ class StoresController < ApplicationController
 
   private
    def stores_params
-      params.require(:store).permit(:store_name)
+      params.require(:store).permit(:store_name, :user_id)
+   end
+
+   def admin_user
+      redirect_to(root_url) unless current_user.admin?
    end
 
 end
