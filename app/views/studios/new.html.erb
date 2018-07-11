@@ -1,6 +1,7 @@
 <% provide(:title, 'スタジオ登録ページ') %>
 
   <h1 id="my-page">Registration New Studio</h1>
+  <%# TODO: idからclassに変更する %>
 
   <%= form_for @studio do |f| %>
   <%= f.hidden_field :store_id, value:@store_id %>

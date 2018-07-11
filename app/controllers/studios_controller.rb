@@ -10,9 +10,9 @@ class StudiosController < ApplicationController
     redirect_to "/stores/#{@studio.store_id}"
   end
 
-end
+  private
+    def studios_params
+      params.require(:studio).permit(:studio_name, :store_id)
+    end
 
-private
-  def studios_params
-    params.require(:studio).permit(:studio_name,:store_id)
-  end
+end
