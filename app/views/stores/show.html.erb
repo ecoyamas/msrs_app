@@ -2,7 +2,7 @@
 
 <h1 id="my-page"><%= @store.store_name %></h1>
 
-<h2>スタジオ一覧</h2>
+<h3 class="studios-index">スタジオ一覧</h3>
 <table class="table table-striped stores-table">
   <thead>
     <tr>
@@ -13,14 +13,16 @@
   </thead>
   <tbody>
 　　<%# TODO: 店舗にひも付くスタジオ一覧を表示 %>
+  <% @studios.each do |r| %>
     <tr>
-      <td>スタジオ名</td>
+      <td><%= r.studio_name %></td>
       <td><%= link_to "予約状況", "", class: "btn btn-success" %></td>
       <td><%= link_to "スタジオ削除", "", method: "delete",
               data:{confirm: "スタジオを削除しますか?"}, class:"btn btn-info" %></td>
     </tr>
+  <% end %>
   </tbody>
 </table>
 
 
-<%= link_to "新規スタジオ登録", "", class: "btn btn-primary new-store-button" %>
+<%= link_to "新規スタジオ登録", new_studio_path(store_id:@store.id), class: "btn btn-primary new-store-button" %>

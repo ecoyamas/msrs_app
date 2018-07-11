@@ -17,6 +17,7 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find(params[:id])
+    @studios = Studio.find(:all, :conditions => { :store_id => @store })
   end
 
   def destroy
