@@ -1,6 +1,6 @@
 
 <!-- ヘッダーのパーシャル -->
-<nav class="navbar navbar-inverse" id="header-size" >
+<nav class="navbar navbar-inverse" id="header-size">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
@@ -13,29 +13,36 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
       <ul class="nav navbar-nav">
         <% if signed_in? %>
-              <li class="active">
-                <%= link_to "my page", current_user %>
-              </li>
-              <li>
-                <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-              </li>
-              <li>
-                <%= link_to"Link","http://www.studiopenta.net/"%>
-              </li>
-          <% else %>
-          <li class="active">
-            <%= link_to "Home","/",class:"navbar-brand" %>
+          <li class="<%= 'active' if current_page?(current_user) %>">
+            <%= link_to "my page", current_user %>
+          </li>
+          <li>
+            <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+          </li>
+       <% else %>
+          <li class="<%= 'active' if current_page?(root_path) %>">
+            <%= link_to "Home", root_path, class:"navbar-brand" %>
           </il>
-          <li>
-            <%= link_to"Sign up","/users/sign_up"%>
+          <li class="<%= 'active' if current_page?(new_user_registration_path) %>">
+            <%= link_to "Sign up", new_user_registration_path %>
           </li>
-          <li>
-            <%= link_to"Sign in","/users/sign_in"%>
+          <li class="<%= 'active' if current_page?(new_user_session_path) %>">
+            <%= link_to "Sign in", new_user_session_path %>
           </li>
-          <li>
-            <%= link_to"Link","http://www.studiopenta.net/"%>
+        <% end %>
+
+        <% if signed_in? && current_user.admin? %>
+          <li class="<%= 'active' if current_page?(new_store_path) %>">
+            <%= link_to "店舗登録", new_store_path %>
           </li>
-         <% end %>
+          <li class="<%= 'active' if current_page?(stores_path) %>">
+            <%= link_to "店舗一覧", stores_path %>
+          </li>
+        <% end %>
+
+          <li>
+            <%= link_to "Link", "http://www.studiopenta.net/", :target => "_blank" %>
+          </li>
       </ul>
     </div>
   </div>
