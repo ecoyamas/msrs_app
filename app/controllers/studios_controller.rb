@@ -1,4 +1,6 @@
 class StudiosController < ApplicationController
+  before_action :authenticate_user!, :admin_user
+
   def new
     @studio = Studio.new
     @store_id = params[:store_id]

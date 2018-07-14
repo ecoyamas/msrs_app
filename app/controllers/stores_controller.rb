@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  before_action :admin_user
+  before_action :authenticate_user!, :admin_user
 
   def index
     @stores = Store.all
