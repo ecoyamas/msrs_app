@@ -1,4 +1,6 @@
 class StudiosController < ApplicationController
+  before_action :authenticate_user!, :admin_user
+
   def new
     @studio = Studio.new
     @store_id = params[:store_id]
@@ -13,6 +15,10 @@ class StudiosController < ApplicationController
   private
     def studios_params
       params.require(:studio).permit(:studio_name, :store_id)
+    end
+
+    def admin_user
+       redirect_to(root_url) unless current_user.admin?
     end
 
 end
