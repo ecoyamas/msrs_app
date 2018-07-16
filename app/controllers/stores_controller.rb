@@ -17,7 +17,7 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find(params[:id])
-    @studios = Studio.where(store_id:@store.id)
+    @studios = Studio.where(store_id: @store)
   end
 
   def destroy
