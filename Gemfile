@@ -8,11 +8,7 @@ gem 'devise', '3.4.1'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'faker', '1.1.2'
-
-group :development do
-  gem 'sqlite3', '1.3.9'
-end
-
+gem 'mysql2', '~> 0.3.20'
 gem 'sass-rails', '4.0.3'
 gem 'uglifier', '2.5.3'
 gem 'coffee-rails', '4.0.1'
