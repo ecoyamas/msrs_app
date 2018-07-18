@@ -111,9 +111,14 @@ class ReservationsController < ApplicationController
     @reservation.update_attributes(reservation_params)
     redirect_to current_user
   end
-end
 
-private
- def reservation_params
-    params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
- end
+  def list
+    @stores = Store.all
+  end
+
+  private
+   def reservation_params
+      params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
+   end
+
+end

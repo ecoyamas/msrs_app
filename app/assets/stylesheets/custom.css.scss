@@ -282,3 +282,23 @@ footer ul li {
    margin: 0 auto;
    padding-top: 10px;
 }
+
+/*ユーザー用店舗一覧ページ*/
+ul.storelist {
+  padding: 20px;
+}
+
+ul.storelist li {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px;
+  background: #faebd7;
+  width: 250px;
+  height: 60px;
+  text-align: center;
+  font-size: 140%;
+}
+
+ul.storelist li:hover {
+   background-color: #a1d8e2;
+}

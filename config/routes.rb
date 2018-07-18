@@ -2,6 +2,7 @@ MsrsApp::Application.routes.draw do
   devise_for :users,:controllers => {
     :registrations => "registrations",:sessions => "sessions"
   }
+  get 'reservations/list'=> 'reservations#list'
   resources :users, only: [:show]
   resources :reservations
   resources :stores
@@ -9,6 +10,7 @@ MsrsApp::Application.routes.draw do
   root  'home#top'
   get 'reserve/:id'=> 'reservations#reserve'
   post 'reserve/:id/start' => 'reservations#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

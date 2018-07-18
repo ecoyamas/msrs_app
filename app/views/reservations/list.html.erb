@@ -1,0 +1,13 @@
+<% provide(:title, '店舗一覧') %>
+<h1 id="my-page">Stores</h1>
+
+  <h3>店舗一覧</h3>
+   <div>
+    <ul class="storelist">
+     <% @stores.each do |r| %>
+      <li>
+       <%= link_to r.store_name, "#" %>
+      </li>
+     <% end %>
+    </ul>
+   <div>
