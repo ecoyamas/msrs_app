@@ -4,8 +4,8 @@ development:
   reconnect: false
   database: msrs_development
   pool: 5
-  username: koyama
-  password: ilovemusic
+  username: msrs_user
+  password: ILoveMusic@2018
   host: localhost
 
 test:
