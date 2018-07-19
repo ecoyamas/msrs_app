@@ -38,7 +38,7 @@
             <td><%= r.frame_time %></td>
             <td><%= link_to "変更", "/reservations/#{r.id}/edit", class:"btn btn-success" %></td>
             <td><%= link_to "削除", "/reservations/#{r.id}", method: "delete",
-                    data: { confirm: "予約を取り消しますか?"}, class:"btn btn-info" %></td>
+                    data: {confirm: "予約を取り消しますか?"}, class:"btn btn-info" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -46,5 +46,5 @@
   </div>
 
   <p>
-    <%= link_to("店舗一覧へ", reservations_list_path, id:"newreserve-button" ) %>
+    <%= link_to("店舗一覧へ", reservations_path, id:"newreserve-button" ) %>
   </p>
