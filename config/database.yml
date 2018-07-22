@@ -19,11 +19,11 @@ test:
   host: localhost
 
 production:
-  adapter: mysql2
+  adapter: pg
   encoding: utf8
   reconnect: false
-  database: msrs_production
-  pool: 5
-  username: koyama
-  password: ilovemusic
-  host: localhost
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
+  port: <%= ENV['DB_PORT'] %>
