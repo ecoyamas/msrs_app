@@ -95,9 +95,9 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-   @reservation = Reservation.find(params[:id])
-   @reservation.destroy
-   redirect_to current_user
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to current_user
   end
 
   def edit
@@ -111,9 +111,13 @@ class ReservationsController < ApplicationController
     @reservation.update_attributes(reservation_params)
     redirect_to current_user
   end
-end
 
-private
- def reservation_params
-    params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
- end
+  def index
+    @stores = Store.all
+  end
+
+  private
+    def reservation_params
+      params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
+    end
+end

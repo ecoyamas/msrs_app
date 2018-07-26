@@ -21,18 +21,18 @@ class StoresController < ApplicationController
   end
 
   def destroy
-   @store = Store.find(params[:id])
-   @store.destroy
-   redirect_to stores_path
+    @store = Store.find(params[:id])
+    @store.destroy
+    redirect_to stores_path
   end
 
-  private
-   def stores_params
-      params.require(:store).permit(:store_name, :user_id)
-   end
+ private
+  def stores_params
+    params.require(:store).permit(:store_name, :user_id)
+  end
 
-   def admin_user
-      redirect_to(root_url) unless current_user.admin?
-   end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
 end
