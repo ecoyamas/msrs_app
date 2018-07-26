@@ -116,9 +116,8 @@ class ReservationsController < ApplicationController
     @stores = Store.all
   end
 
- private
-  def reservation_params
-    params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
-  end
-
+  private
+    def reservation_params
+      params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
+    end
 end
