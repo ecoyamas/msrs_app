@@ -101,9 +101,10 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @store = Store.find_by(store_name: params[:store_name])
+    @studios = Studio.where(store_id:@store.id)
     @reservation = Reservation.find(params[:id])
     @frame = Reservation.new.frame_list
-    @place = Reservation.new.place_list
   end
 
   def update
@@ -114,6 +115,13 @@ class ReservationsController < ApplicationController
 
   def index
     @stores = Store.all
+  end
+
+  def store
+    @store = Store.find(params[:id])
+    @studios = Studio.where(store_id:@store.id)
+    @reservation = Reservation.new
+    @frame = Reservation.new.frame_list
   end
 
   private

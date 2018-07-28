@@ -8,7 +8,7 @@
 
   <div id="user-name">
     <h2 id="account">user name</h2>
-    <div><%= @user.name%></div>
+    <div><%= @user.name %></div>
   </div>
 
   <div id="information">
@@ -32,13 +32,13 @@
       <tbody>
         <% @reservation.each do |r| %>
           <tr>
-            <td><%= r.place_name %></td>
+            <td><%= r.place %></td>
             <td><%= r.studio %></td>
             <td><%= r.date %></td>
             <td><%= r.frame_time %></td>
-            <td><%= link_to "変更", edit_reservation_path(r), class:"btn btn-success" %></td>
+            <td><%= link_to "変更", edit_reservation_path(r, store_name: r.place), class: "btn btn-success" %></td>
             <td><%= link_to "削除", "/reservations/#{r.id}", method: "delete",
-                    data: {confirm: "予約を取り消しますか?"}, class:"btn btn-info" %></td>
+                    data: {confirm: "予約を取り消しますか?"}, class: "btn btn-info" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -46,5 +46,5 @@
   </div>
 
   <p>
-    <%= link_to("店舗一覧へ", reservations_path, id:"newreserve-button" ) %>
+    <%= link_to("店舗一覧へ", reservations_path, id: "newreserve-button" ) %>
   </p>

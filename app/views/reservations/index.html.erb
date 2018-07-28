@@ -7,8 +7,7 @@
     <ul class="storelist">
      <% @stores.each do |s| %>
       <li>
-       <%= link_to s.store_name, "#" %>
-       <%# TODO: リンク先の設定 %>
+       <%= link_to s.store_name, "/reservations/store/#{s.id}" %>
       </li>
      <% end %>
     </ul>

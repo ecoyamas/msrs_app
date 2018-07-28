@@ -26,22 +26,4 @@ class Reservation < ActiveRecord::Base
     result = FRAME[frame.to_i][0]
     return result
   end
-
-  PLACE = [
-    ["渋谷店",0],
-    ["代々木店",1],
-    ["新宿店",2],
-    ["高田馬場店",3],
-    ["池袋店",4],
-    ["大塚店",5]
-  ]
-
-  def place_list
-    return PLACE
-  end
-
-  def place_name
-    result = PLACE[place.to_i][0]
-    return result
-  end
 end

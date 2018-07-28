@@ -1,4 +1,5 @@
 <% provide(:title, '予約ページ') %>
-  <h1 id="my-page">Reservation Change</h1>
+<%# TODO: idをclassに修正する %>
+  <h1 id="my-page"><%= @store.store_name %>予約変更</h1>
 
   <%= render "form" %>
