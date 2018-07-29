@@ -12,7 +12,7 @@ class StoresController < ApplicationController
   def create
     @store = current_user.stores.new(stores_params)
     @store.save
-    redirect_to stores_path
+    redirect_to stores_path, success:'新しい店舗を追加しました'
   end
 
   def show
@@ -23,7 +23,7 @@ class StoresController < ApplicationController
   def destroy
     @store = Store.find(params[:id])
     @store.destroy
-    redirect_to stores_path
+    redirect_to stores_path, danger:'店舗を削除しました'
   end
 
  private
