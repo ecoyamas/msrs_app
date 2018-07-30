@@ -9,7 +9,13 @@ class StudiosController < ApplicationController
   def create
     @studio = Studio.new(studios_params)
     @studio.save
-    redirect_to "/stores/#{@studio.store_id}"
+    redirect_to "/stores/#{@studio.store_id}", success:'新しいスタジオを登録しました'
+  end
+
+  def destroy
+    @studio = Studio.find(params[:id])
+    @studio.destroy
+    redirect_to "/stores/#{@studio.store_id}", danger:'スタジオを削除しました'
   end
 
   private
