@@ -101,9 +101,9 @@ class ReservationsController < ApplicationController
   end
 
   def edit
-    @store = Store.find_by(store_name: params[:store_name])
-    @studios = Studio.where(store_id:@store.id)
     @reservation = Reservation.find(params[:id])
+    @store = Store.find(@reservation.store_id)
+    @studios = Studio.where(store_id: @store)
     @frame = Reservation.new.frame_list
   end
 
@@ -117,15 +117,15 @@ class ReservationsController < ApplicationController
     @stores = Store.all
   end
 
-  def store
+  def new
     @store = Store.find(params[:id])
-    @studios = Studio.where(store_id:@store.id)
+    @studios = Studio.where(store_id: @store)
     @reservation = Reservation.new
     @frame = Reservation.new.frame_list
   end
 
   private
     def reservation_params
-      params.require(:reservation).permit(:place, :studio, :date, :frame,:user_id)
+      params.require(:reservation).permit(:store_id, :studio, :date, :frame, :user_id)
     end
 end

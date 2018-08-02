@@ -2,4 +2,8 @@
 <%# TODO: idをclassに修正する %>
   <h1 id="my-page"><%= @store.store_name %>予約変更</h1>
 
-  <%= render "form" %>
+  <div class="store-status-button">
+   <h3>my pageに戻る際は以下のボタンから</h3>
+   <%= link_to "my page", current_user, class: "btn btn-success" %>
+
+  <%= render "edit_form" %>
