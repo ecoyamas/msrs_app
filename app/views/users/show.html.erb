@@ -32,7 +32,7 @@
       <tbody>
         <% @reservation.each do |r| %>
           <tr>
-            <td><%= r.store_id %></td>
+            <td><%= r.store.store_name %></td>
             <td><%= r.studio %></td>
             <td><%= r.date %></td>
             <td><%= r.frame_time %></td>

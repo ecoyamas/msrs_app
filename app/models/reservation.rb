@@ -1,5 +1,6 @@
 class Reservation < ActiveRecord::Base
   belongs_to :user
+  belongs_to :store
   validates :user_id, presence: true
   default_scope -> { order(date: :asc) }
 
