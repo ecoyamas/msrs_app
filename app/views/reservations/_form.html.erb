@@ -1,34 +1,29 @@
-  <%= form_for @reservation do |f| %>
-  <%= f.hidden_field :user_id, value:current_user.id %>
-  <div id="background">
-    <div id="reservation-form">
-      <div id="store-form">
-        <%= f.label :"店舗名" %><br>
-        <%= f.select :place, @place, {prompt: "店舗を選択"}, {class: "form-control"} %><br>
-      </div>
+<%= form_for @reservation do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :store_id, value: @store.id %>
+<div id="background">
+  <div id="reservation-form">
 
-      <div id="studio-form">
-        <%= f.label :"スタジオ" %><br>
-        <%= f.select :studio, [["Astudio", "Astudio"], ["Bstudio", "Bstudio"], ["Cstudio", "Cstudio"],
-                                          ["Dstudio", "Dstudio"], ["Estudio", "Estudio"], ["Fstudio", "Fstudio"]] ,
-                                          {prompt: "スタジオを選択"}, {class: "form-control"} %><br>
-      </div>
+    <div id="studio-form">
+      <%= f.label :"スタジオ" %><br>
+      <%= f.collection_select :studio_id, @studios, :id, :studio_name,
+      {prompt: "スタジオを選択"}, {class: "form-control"} %><br>
+    </div>
 
-      <div id="start-time" >
-        <%= f.label :"予約日" %><br>
-        <%= f.date_select :date, :start_year=>Time.now.year, :end_year=>Time.now.year,
-        class: 'form-control' %>
-      </div>
+    <div id="start-time">
+      <%= f.label :"予約日" %><br>
+      <%= f.date_select :date, :start_year=>Time.now.year, :end_year=>Time.now.year,
+      class: 'form-control' %>
+    </div>
 
-　　　<div id="end-time" >
+    <div id="end-time" >
       <%= f.label :"時間" %><br>
       <%= f.select :frame, @frame, {prompt: "時間を選択"}, {class: "form-control"} %><br>
-     </div>
+    </div>
 
-
-      <div id="Rbutton">
-        <%= f.submit "reserve", id:"reserve-button"%>
-      </div>
+    <div id="Rbutton">
+      <%= f.submit "reserve", id:"reserve-button"%>
     </div>
   </div>
+</div>
 <% end %>

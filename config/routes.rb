@@ -2,7 +2,7 @@ MsrsApp::Application.routes.draw do
   devise_for :users,:controllers => {
     :registrations => "registrations",:sessions => "sessions"
   }
-  resources :reservations, only: [:index]
+  resources :reservations, only: [:index, :new]
   resources :users, only: [:show]
   resources :reservations
   resources :stores

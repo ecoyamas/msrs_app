@@ -2,14 +2,13 @@
 <h1 id="my-page">Stores</h1>
 <%# TODO: idをclassに修正する %>
 
-  <h3>店舗一覧</h3>
-   <div>
-    <ul class="storelist">
-     <% @stores.each do |s| %>
-      <li>
-       <%= link_to s.store_name, "#" %>
-       <%# TODO: リンク先の設定 %>
-      </li>
-     <% end %>
-    </ul>
-   <div>
+<h3>店舗一覧</h3>
+<div>
+  <ul class="storelist">
+    <% @stores.each do |s| %>
+    <li>
+      <%= link_to s.store_name, new_reservation_path(id: s.id) %>
+    </li>
+    <% end %>
+  </ul>
+ <div>

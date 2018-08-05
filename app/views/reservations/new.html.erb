@@ -1,0 +1,11 @@
+<% provide(:title, '予約ページ') %>
+<h1 id="my-page"><%= @store.store_name %>予約ページ</h1>
+<%# TODO: idをclassに修正する %>
+
+<div class="store-status-button">
+ <h3>予約の空き状況はこちらからご確認ください</h3>
+ <%= link_to "予約状況", "", class: "btn btn-success" %>
+ <%# TODO: リンク先の作成 %>
+</div>
+
+<%= render "form" , object: @frame %>
