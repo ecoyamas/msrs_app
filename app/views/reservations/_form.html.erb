@@ -6,7 +6,7 @@
 
     <div id="studio-form">
       <%= f.label :"スタジオ" %><br>
-      <%= f.collection_select :studio, @studios, :studio_name, :studio_name,
+      <%= f.collection_select :studio_id, @studios, :id, :studio_name,
       {prompt: "スタジオを選択"}, {class: "form-control"} %><br>
     </div>
 

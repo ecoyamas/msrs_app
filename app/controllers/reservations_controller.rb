@@ -126,6 +126,6 @@ class ReservationsController < ApplicationController
 
   private
     def reservation_params
-      params.require(:reservation).permit(:store_id, :studio, :date, :frame, :user_id)
+      params.require(:reservation).permit(:store_id, :studio_id, :date, :frame, :user_id)
     end
 end

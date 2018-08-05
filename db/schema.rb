@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180802125802) do
+ActiveRecord::Schema.define(version: 20180805021922) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "store_id",   limit: 4
-    t.string   "studio",     limit: 255
+    t.integer  "studio_id",  limit: 4
     t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
