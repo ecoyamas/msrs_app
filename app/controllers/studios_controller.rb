@@ -1,5 +1,6 @@
 class StudiosController < ApplicationController
-  before_action :authenticate_user!, :admin_user
+  before_action :authenticate_user!
+  before_action :admin_user, only: [:new]
 
   def new
     @studio = Studio.new
