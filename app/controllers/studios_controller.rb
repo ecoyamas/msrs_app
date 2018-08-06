@@ -20,6 +20,12 @@ class StudiosController < ApplicationController
     redirect_to store_path(@store), danger: 'スタジオを削除しました'
   end
 
+  def show
+    @studio = Studio.find(params[:id])
+    @today = Date.today
+    @reservations = Reservation.where(studio_id:@studio.id).where(date:@today..@today.since(6.days))
+  end
+
   private
     def studios_params
       params.require(:studio).permit(:studio_name, :store_id)
