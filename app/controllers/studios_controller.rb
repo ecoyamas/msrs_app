@@ -1,6 +1,6 @@
 class StudiosController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_user, only: [:new]
+  before_action :admin_user, only: [:new, :create, :destroy]
 
   def new
     @studio = Studio.new
@@ -23,8 +23,8 @@ class StudiosController < ApplicationController
 
   def show
     @studio = Studio.find(params[:id])
-    @today = Date.today
-    @reservations = Reservation.where(studio_id:@studio.id).where(date:@today..@today.since(6.days))
+    today = Date.today
+    @reservations = Reservation.where(studio_id: @studio, date: today..today.since(6.days))
   end
 
   private
