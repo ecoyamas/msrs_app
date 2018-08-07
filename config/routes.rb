@@ -6,7 +6,7 @@ MsrsApp::Application.routes.draw do
   resources :users, only: [:show]
   resources :reservations
   resources :stores
-  resources :studios, :only => [:new, :create, :destroy]
+  resources :studios, :only => [:new, :create, :destroy, :show]
   root  'home#top'
   get 'reserve/:id'=> 'reservations#reserve'
   post 'reserve/:id/start' => 'reservations#create'

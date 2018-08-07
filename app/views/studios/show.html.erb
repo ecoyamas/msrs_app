@@ -1,0 +1,24 @@
+<% provide(:title, 'スタジオ予約状況') %>
+
+<h1 id="my-page"><%= @studio.studio_name %>予約状況</h1>
+<%# TODO: idからclassに変更する %>
+
+<h3 class="studios-index">予約状況（本日から7日間）</h3>
+<table class="table table-striped stores-table">
+  <thead>
+    <tr>
+      <th>日付</th>
+      <th>時間</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |r| %>
+      <tr>
+        <td><%= r.date %></td>
+        <td><%= r.frame_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "予約フォームへ", "", class: "btn btn-primary new-store-button" %>

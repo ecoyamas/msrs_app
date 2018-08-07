@@ -1,5 +1,6 @@
 class StudiosController < ApplicationController
-  before_action :authenticate_user!, :admin_user
+  before_action :authenticate_user!
+  before_action :admin_user, only: [:new, :create, :destroy]
 
   def new
     @studio = Studio.new
@@ -18,6 +19,12 @@ class StudiosController < ApplicationController
     @store = Store.find(@studio.store_id)
     @studio.destroy
     redirect_to store_path(@store), danger: 'スタジオを削除しました'
+  end
+
+  def show
+    @studio = Studio.find(params[:id])
+    today = Date.today
+    @reservations = Reservation.where(studio_id: @studio, date: today..today.since(6.days))
   end
 
   private

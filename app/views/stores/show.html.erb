@@ -14,11 +14,10 @@
     </tr>
   </thead>
   <tbody>
-　　<%# TODO: 店舗にひも付くスタジオ一覧を表示 %>
   <% @studios.each do |s| %>
     <tr>
       <td><%= s.studio_name %></td>
-      <td><%= link_to "予約状況", "", class: "btn btn-success" %></td>
+      <td><%= link_to "予約状況", studio_path(s), class: "btn btn-success" %></td>
       <td><%= link_to "スタジオ削除",  studio_path(s), method: "delete",
               data:{confirm: "スタジオを削除しますか?"}, class:"btn btn-info" %></td>
     </tr>
