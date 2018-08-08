@@ -20,12 +20,12 @@
             <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
           </li>
           <li>
-            <%= link_to "Edit", edit_user_registration_path %>
+            <%= link_to "ユーザー情報編集", edit_user_registration_path %>
           </li>
        <% else %>
           <li class="<%= 'active' if current_page?(root_path) %>">
             <%= link_to "Home", root_path, class: "navbar-brand" %>
-          </il>
+          </li>
           <li class="<%= 'active' if current_page?(new_user_registration_path) %>">
             <%= link_to "Sign up", new_user_registration_path %>
           </li>
