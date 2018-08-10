@@ -8,7 +8,6 @@ MsrsApp::Application.routes.draw do
   resources :stores
   resources :studios, :only => [:new, :create, :destroy, :show]
   root  'home#top'
-  get 'reserve/:id'=> 'reservations#reserve'
   post 'reserve/:id/start' => 'reservations#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
