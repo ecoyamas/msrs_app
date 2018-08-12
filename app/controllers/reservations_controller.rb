@@ -1,6 +1,13 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @store = Store.find(params[:id])
+    @studios = Studio.where(store_id: @store)
+    @reservation = Reservation.new
+    @frame = Reservation.new.frame_list
+  end
+
   def create
     @reservation = current_user.reservations.new(reservation_params)
     @reservation.save
@@ -24,17 +31,6 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.update_attributes(reservation_params)
     redirect_to current_user
-  end
-
-  def index
-    @stores = Store.all
-  end
-
-  def new
-    @store = Store.find(params[:id])
-    @studios = Studio.where(store_id: @store)
-    @reservation = Reservation.new
-    @frame = Reservation.new.frame_list
   end
 
   private
