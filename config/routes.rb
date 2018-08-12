@@ -2,9 +2,8 @@ MsrsApp::Application.routes.draw do
   devise_for :users,:controllers => {
     :registrations => "registrations",:sessions => "sessions"
   }
-  resources :reservations, only: [:index, :new]
+  resources :reservations, only: [:new, :create, :destroy, :edit, :update]
   resources :users, only: [:show]
-  resources :reservations
   resources :stores
   resources :studios, :only => [:new, :create, :destroy, :show]
   root  'home#top'
