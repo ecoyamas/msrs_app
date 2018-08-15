@@ -2,26 +2,28 @@
 <h1 id="my-page">Sign in</h1>
 <%# TODO: idをclassに修正する %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <% flash.each do |key, value| %>
-        <div class="alert <%= bootstrap_class_for(key) %>"><%= value %></div>
-      <% end %>
+<div class= "session-form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% flash.each do |key, value| %>
+          <div class="alert <%= bootstrap_class_for(key) %>"><%= value %></div>
+        <% end %>
 
-      <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
-      </div>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      </div>
+        <div class="form-group">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.submit "Sign in", class: "btn btn-default" %>
+        <div class="form-group">
+          <%= f.submit "Sign in", class: "btn btn-default" %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+    <% end %>
+</div>
