@@ -4,8 +4,7 @@
 
 <div class="store-status-button">
  <h3>予約の空き状況はこちらからご確認ください</h3>
- <%= link_to "予約状況", "", class: "btn btn-success" %>
- <%# TODO: リンク先の作成 %>
+ <%= link_to "予約状況", studio_path(@studio), class: "btn btn-success" %>
 </div>
 
 <%= render "form" , object: @frame %>

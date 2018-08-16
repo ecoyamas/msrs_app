@@ -1,6 +1,6 @@
 <% provide(:title, 'スタジオ予約状況') %>
 
-<h1 id="my-page"><%= @studio.studio_name %>予約状況</h1>
+<h1 id="my-page">【<%= @studio.store.store_name %>】<%= @studio.studio_name %>予約状況</h1>
 <%# TODO: idからclassに変更する %>
 
 <h3 class="studios-index">予約状況（本日から7日間）</h3>
@@ -21,4 +21,4 @@
   </tbody>
 </table>
 
-<%= link_to "予約フォームへ", "", class: "btn btn-primary new-store-button" %>
+<%= link_to "予約フォーム", new_reservation_path(id: @studio), class: "btn btn-primary new-store-button" %>

@@ -2,7 +2,8 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @store = Store.find(params[:id])
+    @studio = Studio.find(params[:id])
+    @store = Store.find(@studio.store_id)
     @studios = Studio.where(store_id: @store)
     @reservation = Reservation.new
     @frame = Reservation.new.frame_list
