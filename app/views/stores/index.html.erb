@@ -15,14 +15,16 @@
   </thead>
   <tbody>
     <% @stores.each do |s| %>
-      <tr>
-        <td><%= s.store_name %></td>
-        <td><%= link_to "店舗詳細", store_path(s), class: "btn btn-success" %></td>
-        <% if current_user.admin? %>
-          <td><%= link_to "削除", store_path(s), method: "delete",
-                  data: {confirm: "店舗を削除しますか?"}, class: "btn btn-info" %></td>
-        <% end %>
-      </tr>
+    <tr>
+      <td><%= s.store_name %></td>
+      <td><%= link_to "店舗詳細", store_path(s), class: "btn btn-success" %></td>
+      <td>
+      <% if current_user.id == s.user_id %>
+        <%= link_to "削除", store_path(s), method: "delete",
+            data: {confirm: "店舗を削除しますか?"}, class: "btn btn-info" %>
+      <% end %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
