@@ -1,6 +1,7 @@
 <% provide(:title, '店舗一覧ページ') %>
 
-<h1 id="my-page">List of stores</h1>
+<h1 id="my-page">店舗一覧</h1>
+<%# TODO: idをclassに修正する %>
 
 <%= render 'shared/flash_messages' %>
 
@@ -17,12 +18,17 @@
     <tr>
       <td><%= s.store_name %></td>
       <td><%= link_to "店舗詳細", store_path(s), class: "btn btn-success" %></td>
-      <td><%= link_to "削除", store_path(s), method: "delete",
-              data:{confirm: "店舗を削除しますか?"}, class:"btn btn-info" %></td>
+      <td>
+      <% if current_user.id == s.user_id %>
+        <%= link_to "削除", store_path(s), method: "delete",
+            data: {confirm: "店舗を削除しますか?"}, class: "btn btn-info" %>
+      <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<%= link_to "新規登録", new_store_path, class: "btn btn-primary new-store-button" %>
+<% if current_user.admin? %>
+  <%= link_to "新規登録", new_store_path, class: "btn btn-primary new-store-button" %>
+<% end %>
