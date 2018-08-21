@@ -11,8 +11,11 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = current_user.reservations.new(reservation_params)
-    @reservation.save
+    if @reservation.save
     redirect_to current_user
+    else
+    redirect_to :back
+    end
   end
 
   def destroy

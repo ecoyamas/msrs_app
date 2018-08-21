@@ -4,6 +4,8 @@ class Reservation < ActiveRecord::Base
   belongs_to :studio
   validates :user_id, presence: true
   default_scope -> { order(date: :asc) }
+  validate :date_cannot_past
+  validate :date_cannot_over_next_month
 
   FRAME = [
     ["10:00~11:00",0],
@@ -27,5 +29,17 @@ class Reservation < ActiveRecord::Base
   def frame_time
     result = FRAME[frame.to_i][0]
     return result
+  end
+
+  def date_cannot_past
+    if date.present? && date < Date.today
+      errors.add(:date)
+    end
+  end
+
+  def date_cannot_over_next_month
+    if date.present? && date > Date.today + 1.month
+      errors.add(:date)
+    end
   end
 end
