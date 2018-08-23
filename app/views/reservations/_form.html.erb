@@ -11,10 +11,9 @@
       {:selected => @studio.id}, {class: "form-control"} %><br>
     </div>
 
-    <div id="start-time">
-      <%= f.label :"予約日" %><br>
-      <%= f.date_select :date, :start_year=>Time.now.year, :end_year=>Time.now.year,
-      class: 'form-control' %>
+    <div id="start-time" class="input-group">
+      <%= f.label :"ご利用日" %><br>
+      <%= f.text_field :frame, data: { :date_format => 'YYYY-MM-DD' }, :class => 'form-control datetimepicker', placeholder: 'YYYY-MM-DD' %>
     </div>
 
     <div id="end-time" >
