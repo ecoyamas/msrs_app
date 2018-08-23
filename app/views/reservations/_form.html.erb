@@ -13,12 +13,17 @@
 
     <div id="start-time" class="input-group">
       <%= f.label :"ご利用日" %><br>
-      <%= f.text_field :frame, data: { :date_format => 'YYYY-MM-DD' }, :class => 'form-control datetimepicker', placeholder: 'YYYY-MM-DD' %>
+      <%= f.text_field :date, data: { :date_format => 'YYYY-MM-DD' }, :class => 'form-control datetimepicker', placeholder: 'YYYY-MM-DD' %>
     </div>
 
-    <div id="end-time" >
-      <%= f.label :"時間" %><br>
-      <%= f.select :frame, @frame, {prompt: "時間を選択"}, {class: "form-control"} %><br>
+    <div id="end-time">
+      <%= f.label :"ご利用時刻" %><br>
+      <%= f.time_select :start_time, :minute_step => 30 %>
+    </div>
+
+    <div id="end-time">
+      <%= f.label :"ご利用時間" %><br>
+      <%= f.select :end_time, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] %>時間
     </div>
 
     <div id="Rbutton">

@@ -6,11 +6,14 @@ class ReservationsController < ApplicationController
     @store = Store.find(@studio.store_id)
     @studios = Studio.where(store_id: @store)
     @reservation = Reservation.new
-    @frame = Reservation.new.frame_list
+    # @frame = Reservation.new.frame_list
   end
 
   def create
-    @reservation = current_user.reservations.new(reservation_params)
+    end_time = params[:id]
+    @reservation = Reservation.new(reservation_params)
+
+
     if @reservation.save
       redirect_to current_user
     else
@@ -40,6 +43,6 @@ class ReservationsController < ApplicationController
 
   private
     def reservation_params
-      params.require(:reservation).permit(:store_id, :studio_id, :date, :frame, :user_id)
+      params.require(:reservation).permit(:store_id, :studio_id, :date, :start_time, :end_time, :user_id)
     end
 end
