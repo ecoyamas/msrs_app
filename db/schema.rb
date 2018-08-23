@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180805021922) do
+ActiveRecord::Schema.define(version: 20180823060103) do
 
   create_table "reservations", force: :cascade do |t|
-    t.integer  "store_id",   limit: 4
-    t.integer  "studio_id",  limit: 4
-    t.integer  "user_id",    limit: 4
+    t.integer  "store_id",       limit: 4
+    t.integer  "studio_id",      limit: 4
+    t.integer  "user_id",        limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "frame",      limit: 4
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
     t.date     "date"
+    t.time     "start_time"
+    t.time     "end_time"
   end
 
   add_index "reservations", ["user_id", "created_at"], name: "index_reservations_on_user_id_and_created_at", using: :btree
