@@ -3,7 +3,7 @@ MsrsApp::Application.routes.draw do
     :registrations => "registrations",:sessions => "sessions"
   }
   resources :reservations, only: [:new, :create, :destroy, :edit, :update]
-  resources :users, only: [:show]
+  resources :users, only: [:show, :destroy]
   resources :stores
   resources :studios, :only => [:new, :create, :destroy, :show]
   root  'home#top'
