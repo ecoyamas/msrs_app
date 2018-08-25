@@ -9,9 +9,12 @@ class StudiosController < ApplicationController
 
   def create
     @studio = Studio.new(studios_params)
-    @studio.save
     @store = Store.find(@studio.store_id)
-    redirect_to store_path(@store), success: '新しいスタジオを登録しました'
+    if @studio.save
+      redirect_to store_path(@store), flash: {success: '新しいスタジオを登録しました'}
+    else
+      redirect_to new_studio_path, flash: {danger: 'ダメよ！！ダメダメダメ！！'}
+    end
   end
 
   def destroy
