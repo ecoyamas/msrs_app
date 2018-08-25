@@ -11,9 +11,12 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = current_user.stores.new(stores_params)
-    @store.save
-    redirect_to stores_path, success: '新しい店舗を登録しました'
+    @store = Store.new(stores_params)
+    if @store.save
+      redirect_to stores_path, flash: {success: '新しい店舗を登録しました'}
+    else
+      redirect_to new_store_path, flash: {danger: 'ダメよ！！ダメダメダメ！！'}
+    end
   end
 
   def show
