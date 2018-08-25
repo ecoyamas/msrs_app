@@ -1,10 +1,9 @@
 <% provide(:title, 'my page') %>
 
-  <% flash.each do |key, value| %>
-    <div class="alert <%= bootstrap_class_for(key) %>"><%= value %></div>
-  <% end %>
-
   <h1 id="my-page">my page</h1>
+  <%# TODO: idをclassに修正する %>
+
+  <%= render 'shared/flash_messages' %>
 
   <div id="user-name">
     <h2 id="account">user name</h2>
