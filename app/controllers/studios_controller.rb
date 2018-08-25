@@ -13,7 +13,7 @@ class StudiosController < ApplicationController
     if @studio.save
       redirect_to store_path(@store), flash: {success: '新しいスタジオを登録しました'}
     else
-      redirect_to new_studio_path, flash: {danger: 'ダメよ！！ダメダメダメ！！'}
+      redirect_to new_studio_path(store_id: @store), flash: {danger: 'ダメよ！！ダメダメダメ！！'}
     end
   end
 
