@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reservation = Reservation.where('date >= ?', Date.today).where(user_id: @user)
+    @reservation = Reservation.where('start_datetime >= ?', Date.today).where(user_id: @user)
   end
 
   def destroy

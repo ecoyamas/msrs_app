@@ -14,8 +14,8 @@
   <tbody>
     <% @reservations.each do |r| %>
       <tr>
-        <td><%= r.date %></td>
-        <td></td>
+        <td><%= r.start_datetime %></td>
+        <td><%= r.use_time %></td>
       </tr>
     <% end %>
   </tbody>

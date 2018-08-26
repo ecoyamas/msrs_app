@@ -27,7 +27,7 @@ class StudiosController < ApplicationController
   def show
     @studio = Studio.find(params[:id])
     today = Date.today
-    @reservations = Reservation.where(studio_id: @studio, date: today..today.since(6.days))
+    @reservations = Reservation.where(studio_id: @studio, start_datetime: today..today.since(6.days))
   end
 
   private

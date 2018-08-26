@@ -3,10 +3,10 @@ class Reservation < ActiveRecord::Base
   belongs_to :store
   belongs_to :studio
   validates :user_id, presence: true
-  default_scope -> { order(date: :asc) }
-  validate :is_reservation
-  validate :date_error_past
-  validate :date_error_over_next_month
+  default_scope -> { order(start_datetime: :asc) }
+  # validate :is_reservation
+  # validate :date_error_past
+  # validate :date_error_over_next_month
 
   # 予約があればエラーメッセージを返す。
   def is_reservation
@@ -15,15 +15,15 @@ class Reservation < ActiveRecord::Base
     # end
   end
 
-  def date_error_past
-    if date.present? && date < Date.today
-      errors.add(:past, "今日以降の日付を指定してください。")
-    end
-  end
-
-  def date_error_over_next_month
-    if date.present? && date > Date.today + 1.month
-      errors.add(:over_next_month, "1ヶ月以内の日付を指定してください。")
-    end
-  end
+  # def date_error_past
+  #   if date.present? && date < Date.today
+  #     errors.add(:past, "今日以降の日付を指定してください。")
+  #   end
+  # end
+  #
+  # def date_error_over_next_month
+  #   if date.present? && date > Date.today + 1.month
+  #     errors.add(:over_next_month, "1ヶ月以内の日付を指定してください。")
+  #   end
+  # end
 end
