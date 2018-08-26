@@ -18,13 +18,13 @@ class Reservation < ActiveRecord::Base
 
   def date_error_past
     if start_datetime.present? && start_datetime < Date.today
-      errors.add(:past, "今日以降の日付を指定してください。")
+      errors.add(:past, "")
     end
   end
 
   def date_error_over_next_month
     if start_datetime.present? && start_datetime > Date.today + 1.month
-      errors.add(:over_next_month, "1ヶ月以内の日付を指定してください。")
+      errors.add(:over_next_month, "")
     end
   end
 end
