@@ -18,7 +18,7 @@
     <tr>
       <td><%= s.studio_name %></td>
       <td><%= link_to "予約状況", studio_path(s), class: "btn btn-success" %></td>
-      <% if current_user.admin? %>
+      <% if current_user.id == s.store.user_id %>
         <td><%= link_to "スタジオ削除",  studio_path(s), method: "delete",
                 data: {confirm: "スタジオを削除しますか?"}, class: "btn btn-info" %></td>
       <% end %>
@@ -27,6 +27,6 @@
   </tbody>
 </table>
 
-<% if current_user.admin? %>
+<% if current_user.id == @store.user_id %>
   <%= link_to "新規スタジオ登録", new_studio_path(store_id: @store), class: "btn btn-primary new-store-button" %>
 <% end %>

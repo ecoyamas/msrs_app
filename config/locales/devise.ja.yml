@@ -63,8 +63,6 @@ ja:
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"
       confirmation: "が内容とあっていません。"
-
-      ja:
   activerecord:
     attributes:
       user:
@@ -73,8 +71,10 @@ ja:
         password_confirmation: パスワード確認
         email: メールアドレス
         current_password: 現在のパスワード
-
-    ja:
+      reservation:
+        over_next_month: "1ヶ月以内の日付を指定してください。"
+        past: "今日以降の日付を指定してください。"
+        is_reservation: "予約が存在します。"
   date:
     formats:
       default: "%Y/%m/%d"

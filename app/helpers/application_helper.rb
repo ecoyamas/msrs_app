@@ -9,6 +9,9 @@ module ApplicationHelper
         "warning"
       when "info"
         "info"
+      # TODO: noticeからinfoに変更
+      when "notice"
+        "info"
       else
         flash_type.to_s
     end

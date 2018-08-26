@@ -1,17 +1,17 @@
 <% provide(:title, 'my page') %>
 
-  <h1 id="my-page">my page</h1>
+  <h1 id="my-page">マイページ</h1>
   <%# TODO: idをclassに修正する %>
 
   <%= render 'shared/flash_messages' %>
 
   <div id="user-name">
-    <h2 id="account">user name</h2>
+    <h2 id="account">お名前</h2>
     <div><%= @user.name %></div>
   </div>
 
   <div id="information">
-    <h3>information</h3>
+    <h3>お知らせ</h3>
     <%= render 'layouts/information' %>
   </div>
 
@@ -21,10 +21,10 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Store</th>
-          <th>Studio</th>
-          <th>Date</th>
-          <th>Time</th>
+          <th>店舗</th>
+          <th>スタジオ</th>
+          <th>ご利用日時</th>
+          <th>ご利用時間</th>
         </tr>
       </thead>
 
@@ -33,8 +33,8 @@
           <tr>
             <td><%= r.store.store_name %></td>
             <td><%= r.studio.studio_name %></td>
-            <td><%= r.date %></td>
-            <td><%= r.frame_time %></td>
+            <td><%= r.start_datetime %></td>
+            <td><%= r.use_time %></td>
             <td><%= link_to "変更", edit_reservation_path(r), class: "btn btn-success" %></td>
             <td><%= link_to "削除", "/reservations/#{r.id}", method: "delete",
                     data: {confirm: "予約を取り消しますか?"}, class: "btn btn-info" %></td>
