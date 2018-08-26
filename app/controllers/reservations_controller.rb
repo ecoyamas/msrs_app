@@ -10,12 +10,12 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @studio = Studio.find(1)
-    @store = Store.find(@studio.store_id)
-    @studios = Studio.where(store_id: @store)
     if @reservation.save
       redirect_to current_user, flash: {success: '予約しました。'}
     else
+      @studio = Studio.find(params[:studio_id])
+      @store = Store.find(@studio.store_id)
+      @studios = Studio.where(store_id: @store)
       render 'new', object: @store, object: @studios
     end
   end
