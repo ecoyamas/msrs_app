@@ -2,9 +2,11 @@
   <div id="error_explanation">
     <div class="alert alert-danger">
       <%= object.errors.count %>件のエラーがあります。
+      <ul>
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
+      </ul>
     </div>
   </div>
 <% end %>

@@ -10,18 +10,20 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-
+    @studio = Studio.find(1)
+    @store = Store.find(@studio.store_id)
+    @studios = Studio.where(store_id: @store)
     if @reservation.save
-      redirect_to current_user
+      redirect_to current_user, flash: {success: '予約しました。'}
     else
-      redirect_to :back
+      render 'new', object: @store, object: @studios
     end
   end
 
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to current_user
+    redirect_to current_user, flash: {danger: '予約を取り消しました。'}
   end
 
   def edit
@@ -34,7 +36,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     @reservation.update_attributes(reservation_params)
-    redirect_to current_user
+    redirect_to current_user, flash: {success: '予約を変更しました。'}
   end
 
   private
