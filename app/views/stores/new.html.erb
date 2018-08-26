@@ -5,6 +5,7 @@
 <%= render 'shared/flash_messages' %>
 
 <%= form_for @store do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
   <div id="store-form">
     <%= f.label :"店舗名" %>
     <%= f.text_field :store_name, placeholder: "店舗名を入力してください", class: "form-control" %>
