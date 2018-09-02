@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to current_user, flash: {success: '予約しました。'}
     else
-      @studio = Studio.find(params[:studio_id])
+      @studio = Studio.find(@reservation.studio_id)
       @store = Store.find(@studio.store_id)
       @studios = Studio.where(store_id: @store)
       render 'new', object: @store, object: @studios
