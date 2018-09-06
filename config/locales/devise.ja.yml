@@ -75,6 +75,7 @@ ja:
         over_next_month: "1ヶ月以内の日付を指定してください。"
         past: "今日以降の日付を指定してください。"
         is_reservation: "予約が存在します。"
+        start_datetime: "ご利用日時"
   date:
     formats:
       default: "%Y/%m/%d"
