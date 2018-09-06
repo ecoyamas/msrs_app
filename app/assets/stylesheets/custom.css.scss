@@ -88,11 +88,6 @@ footer ul li {
   padding-top: 20px;
 }
 
-#sign-up {
-  text-align: center;
-  padding-top: 50px;
-}
-
 #error_explanation {
   color: #f00;
   ul {
@@ -107,16 +102,9 @@ footer ul li {
   margin-bottom: 0;
 }
 
-/* Sign inページ */
-
-#sign-in {
-  text-align: center;
-  padding-top: 50px;
-}
-
 /* my page */
 
-#my-page {
+.heading {
   text-align: center;
   line-height: 130px;
   background-color: #a1d8e2;
@@ -235,7 +223,7 @@ footer ul li {
   border-radius: 20px 20px 20px 20px;
 }
 
-#end-time {
+#use-time {
   padding: 15px 20px;
   margin: 0 auto;
   margin-top: 20px;
