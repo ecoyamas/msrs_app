@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180826001945) do
+ActiveRecord::Schema.define(version: 20180906020838) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "store_id",       limit: 4
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180826001945) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "start_datetime"
-    t.time     "use_time"
+    t.integer  "use_time",       limit: 4
   end
 
   add_index "reservations", ["user_id", "created_at"], name: "index_reservations_on_user_id_and_created_at", using: :btree
