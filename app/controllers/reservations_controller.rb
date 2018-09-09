@@ -31,6 +31,7 @@ class ReservationsController < ApplicationController
     @studio = Studio.find(@reservation.studio_id)
     @store = Store.find(@reservation.store_id)
     @studios = Studio.where(store_id: @store)
+    @use_time = @reservation.use_time.strftime("%-I")
   end
 
   def update
