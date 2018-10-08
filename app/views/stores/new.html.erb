@@ -11,6 +11,11 @@
     <%= f.text_field :store_name, placeholder: "店舗名を入力してください", class: "form-control" %>
   </div>
 
+  <div id="store-form">
+    <%= f.label :"住所" %>
+    <%= f.text_field :address, placeholder: "住所を入力してください", class: "form-control" %>
+  </div>
+
   <div id="store-button">
     <%= f.submit "登録", class: "btn btn-primary btn-lg" %>
   </div>

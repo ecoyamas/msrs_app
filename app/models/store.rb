@@ -3,4 +3,5 @@ class Store < ActiveRecord::Base
   belongs_to :user
   has_many :reservations
   validates :store_name, presence: true
+  validates :address, presence: true
 end
