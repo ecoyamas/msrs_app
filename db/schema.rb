@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180826001945) do
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
     t.string   "address",    limit: 100
+    t.float    "lat",        limit: 53
+    t.float    "lng",        limit: 53
   end
 
   create_table "studios", force: :cascade do |t|
