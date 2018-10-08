@@ -16,7 +16,6 @@ class StoresController < ApplicationController
   def create
     @store = Store.new(stores_params)
 
-　　#経度、緯度の取得処理
     params = URI.encode(@store.address)
     uri =URI.parse("https://maps.googleapis.com/maps/api/geocode/json?address=#{params}&key=AIzaSyDXauEV4TuXM075vYtemnRiN7Bd1j9cw6k")
     logger.debug("URL：#{uri}")
