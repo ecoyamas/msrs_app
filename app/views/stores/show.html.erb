@@ -47,5 +47,10 @@
             },
             zoom: 19 // 地図のズームを指定
         });
+        var mapPosition = {lat: lat_map, lng: lng_map};
+        var marker = new google.maps.Marker({
+        map: map,
+        position: mapPosition
+      });
     }
 <% end %>
