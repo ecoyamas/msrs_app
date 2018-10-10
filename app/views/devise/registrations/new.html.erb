@@ -19,6 +19,11 @@
         </div>
 
         <div class="form-group">
+          <%= f.label :住所 %><br />
+          <%= f.text_field :address, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :password %>
           <% if @validatable %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>

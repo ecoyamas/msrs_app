@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 20180826001945) do
     t.datetime "updated_at"
     t.string   "name",                   limit: 255
     t.boolean  "admin",                              default: false
+    t.string   "address",                limit: 100
+    t.float    "lat",                    limit: 53
+    t.float    "lng",                    limit: 53
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

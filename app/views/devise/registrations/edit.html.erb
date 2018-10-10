@@ -22,6 +22,11 @@
       <% end %>
 
       <div class="form-group">
+        <%= f.label :住所 %><br />
+        <%= f.text_field :address, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :変更後パスワード %><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
