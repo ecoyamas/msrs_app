@@ -48,6 +48,19 @@
     <%= link_to("店舗一覧", stores_path, id: "newreserve-button" ) %>
   </p>
 
+  <div class="store_search" >
+    <h2 id="reservation-title">店舗検索</h2>
+    <%= form_tag(user_path, :method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索', :name => nil %>
+    <% end %>
+    <% if @search_store.present? %>
+  　　 <% @search_store.each do |s| %>
+      <%= s.store_name %>
+      <% end %>
+    <% end %>
+  </div>
+
   <div id="maps" class="store-map"></div>
 
   <!-- Google maps apiの処理 -->
