@@ -15,10 +15,18 @@ class UsersController < ApplicationController
   end
 
   def store_search(search)
-    if search
-      hoge = Store.where('store_name = ?', params[:search])
-      #検索結果を変数に入れて、変数内を次の条件で検索してまた変数に入れて最後にreturnで値を返す。
-      return hoge
+    if params[:store_name].present?
+      result = Store.where("store_name like ?", "%#{params[:store_name]}%")
+    end
+
+    if params[:store_address].present?
+      result = result.where("address like ?", "%#{params[:store_address]}%")
+    end
+
+    if result.present?
+      return result
+    else
+    return false
     end
   end
 

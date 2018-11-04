@@ -49,15 +49,21 @@
   </p>
 
   <div class="store_search" >
-    <h2 id="reservation-title">店舗検索</h2>
+    <h2 id="reservation-title">店舗検索フォーム</h2>
     <%= form_tag(user_path, :method => 'get') do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag '検索', :name => nil %>
+    <%= label :store_name, :"店舗名" %><br>
+    <%= text_field_tag :store_name, '', class: 'form-control' %><br>
+    <%= label :store_address, :"住所" %><br>
+    <%= text_field_tag :store_address, '', class: 'form-control' %><br>
+    <%= submit_tag '検索', :name => nil, class: 'btn btn-success' %>
     <% end %>
     <% if @search_store.present? %>
+    　 <p>検索結果</p>
   　　 <% @search_store.each do |s| %>
-      <%= s.store_name %>
+      <%= link_to s.store_name, store_path(s) %>
       <% end %>
+    <% else%>
+      <p>該当なし</p>
     <% end %>
   </div>
 

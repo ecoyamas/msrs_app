@@ -71,6 +71,7 @@ ja:
         password_confirmation: パスワード確認
         email: メールアドレス
         current_password: 現在のパスワード
+        address: 住所
       reservation:
         over_next_month: "1ヶ月以内の日付を指定してください。"
         past: "今日以降の日付を指定してください。"
