@@ -73,6 +73,8 @@
   <%= javascript_tag do %>
     var lat_map = <%= raw @user.lat.to_json %>;
     var lng_map = <%= raw @user.lng.to_json %>;
+    var near_store_lat = <%= raw @near_store.lat.to_json %>;
+    var near_store_lng = <%= raw @near_store.lng.to_json %>;
 
       var map;
       function initMap() {
@@ -81,12 +83,26 @@
                   lat: lat_map, // 緯度
                   lng: lng_map // 経度
               },
-              zoom: 19 // 地図のズームを指定
+              zoom: 11 // 地図のズームを指定
           });
           var mapPosition = {lat: lat_map, lng: lng_map};
           var marker = new google.maps.Marker({
           map: map,
           position: mapPosition
+        });
+
+          var mapPosition2 = {lat: near_store_lat, lng: near_store_lng};
+          var marker2 = new google.maps.Marker({
+          map: map,
+          position: mapPosition2,
+          icon: {
+                 fillColor: "#FF0000",                //塗り潰し色
+  		           fillOpacity: 0.8,                    //塗り潰し透過率
+  		           path: google.maps.SymbolPath.CIRCLE, //円を指定
+  		           scale: 16,                           //円のサイズ
+  		           strokeColor: "#FF0000",              //枠の色
+  		           strokeWeight: 1.0                    //枠の透過率
+	        }
         });
       }
   <% end %>

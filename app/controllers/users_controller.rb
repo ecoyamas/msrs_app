@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
     #店舗検索処理
     @search_store = store_search(params)
+    @near_store = near_store(params[:id])
+
   end
 
   def destroy
@@ -28,6 +30,17 @@ class UsersController < ApplicationController
     else
     return false
     end
+  end
+
+  def near_store(id)
+    @user = User.find_by(id:id)
+    @user_address = @user.address
+    @user_address = @user_address.slice(0..2)
+    logger.info("#{@user_address}")
+    result = Store.where("address like ?", "%#{@user_address}%").first
+    logger.info(result)
+
+    return result
   end
 
 end
