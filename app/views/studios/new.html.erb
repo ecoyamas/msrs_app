@@ -1,19 +1,17 @@
 <% provide(:title, 'スタジオ登録') %>
-
-<h1 id="my-page">スタジオ登録</h1>
-<%# TODO: idからclassに変更する %>
+<h1 class="heading">スタジオ登録</h1>
 
 <%= render 'shared/flash_messages' %>
 
 <%= form_for @studio do |f| %>
   <%= f.hidden_field :store_id, value:@store_id %>
 
-  <div id="store-form">
+  <div class="store-form">
     <%= f.label :"スタジオ名" %>
     <%= f.text_field :studio_name, placeholder:"スタジオ名を入力してください", class:"form-control" %>
   </div>
 
-  <div id="store-button">
+  <div class="store-button">
     <%= f.submit "登録", class:"btn btn-primary btn-lg" %>
   </div>
 <% end %>

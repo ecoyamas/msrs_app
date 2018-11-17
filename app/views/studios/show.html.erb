@@ -1,7 +1,5 @@
 <% provide(:title, 'スタジオ予約状況') %>
-
-<h1 id="my-page">【<%= @studio.store.store_name %>】<%= @studio.studio_name %>予約状況</h1>
-<%# TODO: idからclassに変更する %>
+<h1 class="heading">【<%= @studio.store.store_name %>】<%= @studio.studio_name %>予約状況</h1>
 
 <h3 class="studios-index">予約状況（本日から7日間）</h3>
 <table class="table table-striped stores-table">

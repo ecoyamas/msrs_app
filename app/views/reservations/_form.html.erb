@@ -2,27 +2,27 @@
 <%= render 'shared/error_messages', object: f.object %>
 <%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.hidden_field :store_id, value: @store.id %>
-<div id="background">
-  <div id="reservation-form">
+<div class="background">
+  <div class="reservation-form">
 
-    <div id="studio-form">
+    <div class="studio-form">
       <%= f.label :"スタジオ" %><br>
       <%= f.collection_select :studio_id, @studios, :id, :studio_name,
       {:selected => @studio.id}, {class: "form-control"} %><br>
     </div>
 
-    <div id="start-time" class="input-group">
+    <div class="start-time input-group">
       <%= f.label :"ご利用日時" %><br>
       <%= f.text_field :start_datetime, data: { :date_format => 'YYYY-MM-DD hh:mm' }, :class => 'form-control datetimepicker', placeholder: 'YYYY-MM-DD hh:mm' %>
     </div>
 
-    <div id="end-time">
+    <div class="use-time">
       <%= f.label :"ご利用時間" %><br>
       <%= f.select :use_time, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], :selected => @use_time %>時間
     </div>
 
-    <div id="Rbutton">
-      <%= f.submit "reserve", id:"reserve-button"%>
+    <div class="rbutton">
+      <%= f.submit "reserve", class:"reserve-button"%>
     </div>
   </div>
 </div>

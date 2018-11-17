@@ -1,22 +1,20 @@
 <% provide(:title, 'my page') %>
-
-  <h1 id="my-page">マイページ</h1>
-  <%# TODO: idをclassに修正する %>
+  <h1 class="heading">マイページ</h1>
 
   <%= render 'shared/flash_messages' %>
 
-  <div id="user-name">
-    <h2 id="account">お名前</h2>
+  <div class="user-name">
+    <h2 class="account">お名前</h2>
     <div><%= @user.name %></div>
   </div>
 
-  <div id="information">
+  <div class="information">
     <h3>お知らせ</h3>
     <%= render 'layouts/information' %>
   </div>
 
-  <div id="reservation-status">
-    <h2 id="reservation-title">予約状況</h2>
+  <div class="reservation-status">
+    <h2 class="reservation-title">予約状況</h2>
 
     <table class="table table-striped">
       <thead>
@@ -45,7 +43,7 @@
   </div>
 
   <p>
-    <%= link_to("店舗一覧", stores_path, id: "newreserve-button" ) %>
+    <%= link_to("店舗一覧", stores_path, class: "newreserve-button" ) %>
   </p>
 
   <div class="store_search" >
